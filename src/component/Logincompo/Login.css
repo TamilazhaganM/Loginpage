@@ -22,8 +22,7 @@ input:focus, .form-control:focus {
   margin: 20px auto;
   height: 400px;
   max-height: 100vh;
-  width: 80%;
-  max-width: 100%;
+  max-width: 80%;
   /* box-shadow: 0px 0px 15px 5px black; */
   border: 2px solid;
 }
@@ -77,5 +76,12 @@ input:focus, .form-control:focus {
 .linkitem{
   color:rgb(78,78,225);
   text-decoration: underline rgb(78,78,225);
+  cursor: pointer;
+}
+.eyebtn{
+  position: absolute;
+  right: 4px;
+  top: 10px;
+  color: gray;
   cursor: pointer;
 }

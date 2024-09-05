@@ -1,23 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLock, faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEye,
+  faEyeSlash,
+  faLock,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
-
 const Login = () => {
-  const navigate=useNavigate()
+  const [visible, setVisible] = useState(false);
+  const navigate = useNavigate();
+  const [password, setPassword] = useState("");
 
-  function navigatetosignin(){
-    navigate("/")
+  function navigatetosignin() {
+    navigate("/");
+  }
+  function handlePassword(e) {
+    setPassword(e.target.value);
   }
   return (
     <div id="Loginsection">
       <div className="login-container">
         <Container>
           <Row>
-          <Col className="welcomesection" lg={6}>
+            <Col className="welcomesection" lg={6}>
               <h1>Great to see you again!</h1>
               <p>Ready to explore what's new?</p>
             </Col>
@@ -26,7 +35,7 @@ const Login = () => {
               <div className="inputs">
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1">
-                  <FontAwesomeIcon icon={faUser} />
+                    <FontAwesomeIcon icon={faUser} />
                   </span>
                   <input
                     type="text"
@@ -39,29 +48,43 @@ const Login = () => {
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1">
-                  <FontAwesomeIcon icon={faLock} />
-
+                    <FontAwesomeIcon icon={faLock} />
                   </span>
-                  <input
-                    type="password"
-                    class="form-control"
-                    placeholder="Password"
-                    aria-label="password"
-                    aria-describedby="basic-addon1"
-                    required
-                  ></input>
+                  <div>
+                    <input
+                      type={visible ? "text" : "password"}
+                      value={password}
+                      class="form-control"
+                      placeholder="Password"
+                      onChange={handlePassword}
+                      aria-describedby="basic-addon1"
+                      required
+                    ></input>
+                    <div
+                      className=" input-group-text eyebtn"
+                      onClick={() => setVisible(!visible)}
+                    >
+                      {visible ? (
+                        <FontAwesomeIcon icon={faEye} />
+                      ) : (
+                        <FontAwesomeIcon icon={faEyeSlash} />
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
               <Button className="loginbtn">Login</Button>
 
-              <p>Don't have an account ? <span className="linkitem" onClick={navigatetosignin}>Sign In</span></p>
-
+              <p>
+                Don't have an account ?{" "}
+                <span className="linkitem" onClick={navigatetosignin}>
+                  Sign In
+                </span>
+              </p>
             </Col>
-           
           </Row>
         </Container>
       </div>
-    
     </div>
   );
 };
