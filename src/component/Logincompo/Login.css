@@ -78,10 +78,10 @@ input:focus, .form-control:focus {
   text-decoration: underline rgb(78,78,225);
   cursor: pointer;
 }
-.eyebtn{
+.eyebtn2{
   position: absolute;
   right: 4px;
   top: 10px;
-  color: gray;
+  background-color: transparent;
   cursor: pointer;
 }

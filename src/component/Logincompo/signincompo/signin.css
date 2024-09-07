@@ -85,5 +85,6 @@ input:focus, .form-control:focus {
     right: 10px;
     top: 7px;
     color: rgb(161, 160, 160);
+    background-color: transparent;
     cursor: pointer;
   }

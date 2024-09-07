@@ -61,7 +61,7 @@ const Login = () => {
                       required
                     ></input>
                     <div
-                      className=" input-group-text eyebtn"
+                      className=" eyebtn2"
                       onClick={() => setVisible(!visible)}
                     >
                       {visible ? (

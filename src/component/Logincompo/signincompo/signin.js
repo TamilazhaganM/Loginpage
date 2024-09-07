@@ -113,7 +113,7 @@ const Signin = () => {
                       aria-describedby="basic-addon1"
                       required
                     ></input>
-                    <div className=" input-group-text eyebtn" onClick={()=>setVisible(!visible)}>
+                    <div className=" eyebtn" onClick={()=>setVisible(!visible)}>
                     {visible? <FontAwesomeIcon icon={faEye} />: <FontAwesomeIcon icon={faEyeSlash} />}
                    
                     </div></div>
