@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Contact.css";
-import { Table } from "react-bootstrap";
+// import { Table } from "react-bootstrap";
 import axios from "axios";
 
 const Contact = () => {
   const [users, setUsers] = useState([]);
-  const [apidata,setApidata]=useState([])
+  const [apidata]=useState([])
   const [name, setName] = useState("");
   const [phone, setPhone] = useState();
   const [email, setEmail] = useState("");
