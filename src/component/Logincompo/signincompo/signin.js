@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, } from "react";
 import "./signin.css";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -38,9 +38,6 @@ const Signin = () => {
 
     if (name && mail && pass) {
       const newUser = { name, mail, pass };
-      axios
-        .post("https://jsonplaceholder.typicode.com/users", newUser)
-        .then((response) => console.log(response.data));
       setData([...data, { id: data.length + 1, ...newUser }]);
       setUser("");
       setEmail("");
