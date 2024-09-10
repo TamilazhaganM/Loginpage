@@ -10,7 +10,6 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
 const Signin = () => {
   const [visible, setVisible] = useState(false);
