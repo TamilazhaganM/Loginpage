@@ -32,7 +32,7 @@ const Signin = () => {
     const name = user.trim();
     const mail = email.trim();
     const pass = password.trim();
-    navigate("/Contact")
+   
 
 
     if (name && mail && pass) {
@@ -48,6 +48,10 @@ const Signin = () => {
     }else if(pass===""){
       alert("Please Enter Your Password ")
     }
+    if (name&&mail&&pass) {
+      navigate("/Contact")
+    }
+  
   }
 
   function naveigatetologin() {
