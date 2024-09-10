@@ -1,0 +1,61 @@
+h1{
+    display: block;
+    margin: 20px auto ;
+    font-size: 3rem;
+    text-transform:uppercase;
+    text-align: center;
+}
+th{
+    font-size: 2rem;
+}
+table{
+    width: 90%;
+    margin: 0 auto;
+}
+.contact-table{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
+    font-size: small;
+    margin: 0 auto;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+button{
+    margin: 0 5px;
+    border: none;
+}
+.Addbtn{
+    background-color: green;
+    border-radius: 5px;
+}
+.editbtn{
+    background-color: gray;
+    border-radius: 5px;
+}
+.deletebtn{
+    background-color: red;
+    border-radius: 5px;
+}
+@media screen and (max-width: 990px) {
+    h1 {
+      display: block;
+      margin: 10px auto;
+      font-size: 2rem;
+    }
+    th {
+      font-size: 1.5rem;
+    }
+    table {
+      width: 100%;
+      font-size: smaller;
+    }
+    button {
+      padding: 5px;
+      font-size: smaller;
+    }
+  }
+  

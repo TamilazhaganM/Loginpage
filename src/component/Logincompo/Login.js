@@ -22,7 +22,8 @@ const Login = () => {
     setPassword(e.target.value);
   }
   return (
-    <div id="Loginsection">
+    <section id="firstsection">
+      <div id="Loginsection">
       <div className="login-container">
         <Container>
           <Row>
@@ -86,6 +87,8 @@ const Login = () => {
         </Container>
       </div>
     </div>
+    </section>
+    
   );
 };
 

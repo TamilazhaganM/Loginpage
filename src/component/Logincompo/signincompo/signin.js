@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./signin.css";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
@@ -11,6 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Contact from "../contactcomponent/Contact";
 
 const Signin = () => {
   const [visible, setVisible] = useState(false);
@@ -39,19 +40,26 @@ const Signin = () => {
     const name = user.trim();
     const mail = email.trim();
     const pass = password.trim();
-    if (name && mail && pass) {
-      const newUser = { name, mail, pass };
-      axios
-        .post("https://jsonplaceholder.typicode.com/users", newUser)
-        .then((response) => console.log(response.data));
-      setData([...data, { id: data.length + 1, ...newUser }]);
-      setUser("");
-      setEmail("");
-      setPassword("");
-    } else {
-      alert("Kindly fill every information");
-    }
+    navigate("/contact")
   }
+
+  //   if (name && mail && pass) {
+  //     const newUser = { name, mail, pass };
+  //     axios
+  //       .post("https://jsonplaceholder.typicode.com/users", newUser)
+  //       .then((response) => console.log(response.data));
+  //     setData([...data, { id: data.length + 1, ...newUser }]);
+  //     setUser("");
+  //     setEmail("");
+  //     setPassword("");
+  //   } else if(name===""){
+  //     alert("Please Enter Your Username ")
+  //   }else if(mail===""){
+  //     alert("Please Enter Your email ")
+  //   }else if(pass===""){
+  //     alert("Please Enter Your Password ")
+  //   }
+  // }
 
   function naveigatetologin() {
     navigate("/login");
@@ -59,7 +67,8 @@ const Signin = () => {
 
   return (
     <div>
-      <div id="signinsection">
+    <section id="firstsection">
+    <div id="signinsection">
         <div className="signin-container">
           <Container>
             <Row>
@@ -69,7 +78,7 @@ const Signin = () => {
               </Col>
               <Col className="inputsection2" lg={6}>
                 <h1>Signin</h1>
-                <div className="inputs2">
+                <Form className="inputs2">
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">
                       <FontAwesomeIcon icon={faUser} />
@@ -119,7 +128,7 @@ const Signin = () => {
                     </div></div>
                     
                   </div>
-                </div>
+                </Form>
                 <Button className="loginbtn2" onClick={handleSubmit}>
                   Sign In
                 </Button>
@@ -135,6 +144,8 @@ const Signin = () => {
           </Container>
         </div>
       </div>
+    </section>
+      
     </div>
   );
 };
