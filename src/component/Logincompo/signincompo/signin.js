@@ -11,7 +11,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Contact from "../contactcomponent/Contact";
 
 const Signin = () => {
   const [visible, setVisible] = useState(false);
@@ -21,12 +20,6 @@ const Signin = () => {
   const [password, setPassword] = useState("");
   const [data, setData] = useState([{ name: "", mail: "", pass: "" }]);
 
-  useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/users")
-      .then((response) => console.log(response.data))
-      .catch((e) => console.log(e));
-  }, []);
   function handleUser(e) {
     setUser(e.target.value);
   }
@@ -40,26 +33,26 @@ const Signin = () => {
     const name = user.trim();
     const mail = email.trim();
     const pass = password.trim();
-    navigate("/contact")
-  }
+    navigate("/Contact")
 
-  //   if (name && mail && pass) {
-  //     const newUser = { name, mail, pass };
-  //     axios
-  //       .post("https://jsonplaceholder.typicode.com/users", newUser)
-  //       .then((response) => console.log(response.data));
-  //     setData([...data, { id: data.length + 1, ...newUser }]);
-  //     setUser("");
-  //     setEmail("");
-  //     setPassword("");
-  //   } else if(name===""){
-  //     alert("Please Enter Your Username ")
-  //   }else if(mail===""){
-  //     alert("Please Enter Your email ")
-  //   }else if(pass===""){
-  //     alert("Please Enter Your Password ")
-  //   }
-  // }
+
+    if (name && mail && pass) {
+      const newUser = { name, mail, pass };
+      axios
+        .post("https://jsonplaceholder.typicode.com/users", newUser)
+        .then((response) => console.log(response.data));
+      setData([...data, { id: data.length + 1, ...newUser }]);
+      setUser("");
+      setEmail("");
+      setPassword("");
+    } else if(name===""){
+      alert("Please Enter Your Username ")
+    }else if(mail===""){
+      alert("Please Enter Your email ")
+    }else if(pass===""){
+      alert("Please Enter Your Password ")
+    }
+  }
 
   function naveigatetologin() {
     navigate("/login");
