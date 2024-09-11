@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./Contact.css";
 import Footer from "../../Footer";
 import axios from "axios";
+import { faCheck,faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Contact = () => {
   const [users, setUsers] = useState([]);
@@ -17,7 +19,7 @@ const Contact = () => {
 
   // Generate a unique ID manually
   const generateUniqueId = () => {
-    return Date.now() + Math.random().toString(36).substr(2, 9);
+    return Date.now() + Math.random().toString(36).substring(2, 9);
   };
 
   const deleteUser = (id) => {
@@ -75,7 +77,7 @@ const Contact = () => {
               <td>
                 <div className="buttons">
                   <button className="deletebtn" onClick={() => deleteUser(data.id)}>
-                    Delete
+                    <FontAwesomeIcon icon={faTrash} />
                   </button>
                 </div>
               </td>
@@ -98,7 +100,7 @@ const Contact = () => {
             <td>
               <div className="buttons">
                 <button className="Addbtn" onClick={postdata}>
-                  Add
+                  <FontAwesomeIcon icon={faCheck} />
                 </button>
               </div>
             </td>
