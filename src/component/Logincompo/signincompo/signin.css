@@ -38,7 +38,7 @@ input:focus, .form-control:focus {
   color: black;
   background-color: white;
   height: 100%;
-  margin-top: -50px;
+  margin-top: -100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,7 +59,7 @@ input:focus, .form-control:focus {
 }
 .inputsection2{
   height: auto;
-  margin-top: -50px;
+  margin-top: -70px;
 }
 .inputsection2 h1{
   margin-top: 30px;
