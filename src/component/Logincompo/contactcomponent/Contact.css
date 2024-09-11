@@ -1,9 +1,10 @@
 h1{
     display: block;
-    margin: 20px auto ;
+    margin: 50px auto ;
     font-size: 3rem;
     text-transform:uppercase;
     text-align: center;
+    border-bottom: 2px groove;
 }
 th{
     font-size: 2rem;
@@ -11,6 +12,9 @@ th{
 table{
     width: 90%;
     margin: 0 auto;
+}
+input{
+    width: 100%;
 }
 .contact-table{
     display: flex;
@@ -47,7 +51,7 @@ button{
       font-size: 2rem;
     }
     th {
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
     table {
       width: 100%;
@@ -58,4 +62,4 @@ button{
       font-size: smaller;
     }
   }
-  
+ 
