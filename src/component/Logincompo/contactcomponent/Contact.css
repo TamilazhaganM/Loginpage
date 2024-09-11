@@ -18,11 +18,14 @@ td{
     font-size: 1rem;
 }
 table{
-    width: 90%;
+    max-width:100%;
+    width: 100%;
     margin: 0 auto;
+    table-layout: fixed;
 }
 input{
-    width: 90%;
+    width: 100%;
+    box-sizing: border-box;
     font-size: 1rem;
     background-color: rgb(234, 230, 230);
     border:none ;
@@ -76,6 +79,9 @@ button{
       display: block;
       margin: 10px auto;
       font-size: 2rem;
+    }
+    td{
+        font-size: 0.8rem;
     }
     th {
       font-size: 1rem;

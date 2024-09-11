@@ -35,6 +35,19 @@ const Signin = () => {
     const pass = password.trim();
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
    
+    if(name===""){
+      alert("Please Enter Your Username ")
+      return;
+    } if(mail===""){
+      alert("Please Enter Your email ")
+      return;
+    } if(!emailPattern.test(mail)){
+      alert("Please Enter a Valid email address")
+      return;
+    } if(pass===""){
+      alert("Please Enter Your Password ")
+      return;
+    }
 
 
     if (name && mail && pass) {
@@ -43,19 +56,11 @@ const Signin = () => {
       setUser("");
       setEmail("");
       setPassword("");
-    } else if(name===""){
-      alert("Please Enter Your Username ")
-    }else if(mail===""){
-      alert("Please Enter Your email ")
-    }else if(!emailPattern.test(mail)){
-      alert("Please Enter a Valid email address")
-    }
-    else if(pass===""){
-      alert("Please Enter Your Password ")
-    }
-    if (name&&mail&&pass) {
       navigate("/Contact")
-    }
+    } 
+  
+     
+    
   
   }
 

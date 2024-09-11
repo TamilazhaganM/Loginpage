@@ -9,12 +9,10 @@ const Contact = () => {
   const [users, setUsers] = useState([]);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
   const [city, setCity] = useState("");
 
   const newname = name.trim();
   const newphone = phone.trim();
-  const newemail = email.trim();
   const newcity = city.trim();
 
   // Generate a unique ID manually
@@ -27,7 +25,7 @@ const Contact = () => {
   };
 
   const postdata = async () => {
-    if (!newname || !newphone || !newemail || !newcity) {
+    if (!newname || !newphone || !newcity) {
       alert("All fields must be filled out.");
       return;
     }
@@ -35,7 +33,6 @@ const Contact = () => {
       id: generateUniqueId(),  
       name: newname,
       phone: newphone,
-      email: newemail,
       city: newcity,
     };
 
@@ -48,7 +45,6 @@ const Contact = () => {
     setUsers([...users, newUser]);
     setName("");
     setPhone("");
-    setEmail("");
     setCity("");
   };
 
@@ -61,7 +57,6 @@ const Contact = () => {
             <th>S.No</th>
             <th>Name</th>
             <th>Contact</th>
-            <th>Email</th>
             <th>City</th>
             <th>Options</th>
           </tr>
@@ -72,7 +67,6 @@ const Contact = () => {
               <td>{index + 1}</td>
               <td>{data.name}</td>
               <td>{data.phone}</td>
-              <td>{data.email}</td>
               <td>{data.city}</td>
               <td>
                 <div className="buttons">
@@ -86,21 +80,18 @@ const Contact = () => {
           <tr>
             <td>{users.length + 1}</td>
             <td>
-              <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+              <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name..." />
             </td>
             <td>
-              <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} />
+              <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Phone..."/>
             </td>
             <td>
-              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            </td>
-            <td>
-              <input type="text" value={city} onChange={(e) => setCity(e.target.value)} />
+              <input type="text" value={city} onChange={(e) => setCity(e.target.value)} placeholder="Place..." />
             </td>
             <td>
               <div className="buttons">
                 <button className="Addbtn" onClick={postdata}>
-                  <FontAwesomeIcon icon={faCheck} />
+                  <FontAwesomeIcon icon={faCheck}/>
                 </button>
               </div>
             </td>
