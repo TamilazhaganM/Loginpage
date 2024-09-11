@@ -1,5 +1,6 @@
 import React, { useState, } from "react";
 import "./signin.css";
+import Footer from "../../Footer";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -32,6 +33,7 @@ const Signin = () => {
     const name = user.trim();
     const mail = email.trim();
     const pass = password.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
    
 
 
@@ -45,7 +47,10 @@ const Signin = () => {
       alert("Please Enter Your Username ")
     }else if(mail===""){
       alert("Please Enter Your email ")
-    }else if(pass===""){
+    }else if(!emailPattern.test(mail)){
+      alert("Please Enter a Valid email address")
+    }
+    else if(pass===""){
       alert("Please Enter Your Password ")
     }
     if (name&&mail&&pass) {
@@ -95,7 +100,7 @@ const Signin = () => {
                       type="email"
                       value={email}
                       class="form-control"
-                      placeholder="email"
+                      placeholder="username@gmail.com"
                       onChange={handleEmail}
                       aria-label="email"
                       aria-describedby="basic-addon1"
@@ -135,10 +140,11 @@ const Signin = () => {
               </Col>
             </Row>
           </Container>
+          
         </div>
       </div>
     </section>
-      
+    <Footer />
     </div>
   );
 };

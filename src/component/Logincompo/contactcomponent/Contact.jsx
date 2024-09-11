@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Contact.css";
+import Footer from "../../Footer";
 import axios from "axios";
 
 const Contact = () => {
@@ -104,6 +105,7 @@ const Contact = () => {
           </tr>
         </tbody>
       </table>
+      <Footer />
     </div>
   );
 };

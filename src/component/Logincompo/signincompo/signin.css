@@ -38,7 +38,7 @@ input:focus, .form-control:focus {
   color: black;
   background-color: white;
   height: 100%;
-  margin-top: -160px;
+  margin-top: -180px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,3 +89,4 @@ input:focus, .form-control:focus {
     background-color: transparent;
     cursor: pointer;
   }
+  

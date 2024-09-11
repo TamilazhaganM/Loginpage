@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Footer from "../Footer";
 import {
   faEnvelope,
   faEye,
@@ -32,10 +33,15 @@ const Login = () => {
   function handleSubmit() {
     const trimmedEmail = mail.trim();
     const trimmedPassword = password.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
 
     // Simple validation for empty fields
     if (!trimmedEmail) {
       alert("Please enter your email.");
+      return;
+    }
+    if(!emailPattern.test(trimmedEmail)){
+      alert("Please Enter a Valid email address")
       return;
     }
     if (!trimmedPassword) {
@@ -119,6 +125,7 @@ const Login = () => {
           </Container>
         </div>
       </div>
+      <Footer />
     </section>
   );
 };
